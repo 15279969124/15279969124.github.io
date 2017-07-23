@@ -1,0 +1,439 @@
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;  /*清除元素的内外边距*/
+}
+
+fieldset, img, input, button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;  /*外面环绕线*/
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/*去掉原样式中的小黑点*/
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";  /*字体的自动识别*/
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+/*输入字居中显示*/
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+/**/
+textarea {
+    resize: none;  /*不可以随意拖动*/
+}
+
+/*防止拖动*/
+img {
+    border: 0;
+    vertical-align: middle; /*  去掉图片底部默认的3像素空白缝隙*/
+}
+
+table {
+    border-collapse: collapse; /*合并外连线*/
+}
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53"; /*unitedCode的写法，宋体的写法*/
+    color: #666; /*150%基于当前字体尺寸的百分比行间距*/
+    background: #fff;
+}
+
+.clearfix:before, .clearfix:after {
+    /*清除浮动，最好最标准的写法*/
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/  /*兼容IE6下的写法*/
+}
+
+a {
+    color: #666;   /*a 标签是不继承颜色 的*/
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C81623;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s, i, em {  /*一般是起装饰作用*/
+    font-style: normal;  /*去掉原有的样式*/
+    text-decoration: none;  /*去掉下划线或是删除线*/
+}
+
+.col-red {
+    color: #C81623 !important;/*京东主色调*/
+}
+
+/*公共类*/
+.w {
+    /*版心 提取 */
+    width: 1210px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.al {
+    text-align: left;
+}
+
+.ac {
+    text-align: center;
+}
+
+.ar {
+    text-align: right;
+}
+
+.hide {
+    display: none;
+}
+
+/*css初始化完成*/
+
+/*shortcut start*/
+.shortcut {
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    background-color: #f1f1f1;
+}
+.shortcut_l,
+.shortcut_r .fore {
+    padding: 0 25px 0 10px;
+    position: relative; 
+}
+.shortcut_l i,
+.shortcut_r .fore i{
+    /*display:inline-block;*/
+    width: 11px;
+    height: 15px;
+    position: absolute;
+    top: 13px;
+    right: 9px;
+    overflow: hidden;
+    /*background: blue;*/
+}
+.shortcut_l i s,
+.shortcut_r .fore i s {
+    position: absolute;
+    top: -15px;
+}
+
+.shortcut_r li {
+    float: left;
+    padding:0 10px;
+}
+
+.shortcut_r .line {
+    width: 1px;
+    height: 12px;
+    background: red;
+    margin-top: 9px;
+    padding:0;
+}
+.shortcut_r .jd_tel {
+    padding-left: 25px;
+
+}
+.shortcut_r .tel {
+    width: 15px;
+    height: 20px;
+    background: url("../images/sprite.png")no-repeat;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+.shortcut_r .tel:hover {
+    width: 15px;
+    height: 20px;
+    background: url("../images/sprite.png")no-repeat 0 -25px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+/*shortcut end*/
+
+/*topBanner start*/
+.topBanner {
+    background-color: #FF2F7A;
+}
+.topBanner .w {
+    position: relative;
+}
+.topBanner_close {
+    width: 19px;
+    height: 19px;
+    background: url("../images/close.png") no-repeat;
+    position: absolute;
+    top: 6px;
+    right: 12px;
+}
+.topBanner_close:hover {
+    width: 19px;
+    height: 19px;
+    background: url("../images/close.png") no-repeat 0 -19px;
+    position: absolute;
+    top: 6px;
+    right: 12px;
+}
+/*topBanner end*/
+
+/*logo start*/
+.logo {
+    width: 361px;
+    height: 60px;
+    padding:20px 0 ;
+}
+.logo a {
+    width: 270px;
+    height: 60px;
+    display: inline-block;
+    background: url("../images/logo.png") no-repeat;
+    text-indent: -200em;
+}
+.search {
+    /*width: 538px;*/
+    height: 36px;
+    margin-top: 25px;
+}
+.search input {
+    width: 450px;
+    height: 32px;
+    border:2px solid #b61d1d;
+    color: #ccc;
+    padding-left: 4px;
+    float: left;
+}
+.search button {
+    width: 80px;
+    height: 36px;
+    background-color: #b61d1d;
+    font-size: 24px;
+    color: #ffffff;
+    float: left;
+}
+.shoppingcart {
+    width: 96px;
+    height: 36px;
+    /*background: #00B0E7;*/
+    border: 1px solid #DFDFDF;
+    margin-top: 25px;
+    margin-right: 65px;
+    line-height: 36px;
+    padding-left: 43px;
+    position: relative;
+}
+
+.shoppingcart .icon1 {
+    width: 18px;
+    height: 16px;
+    background-color: red;
+    background: url("../images/jd2015img.png") no-repeat 0 -90px;
+    /*float: left;*/
+    position: absolute;
+    top: 8px;
+    left: 17px;
+}
+.shoppingcart .icon2 {
+    display: block;
+    width: 16px;
+    height: 14px;
+    background-color: #b1191a;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    line-height: 14px;
+    position: absolute;
+    top: -3px;
+    left: 103px;
+    border-radius: 7px 7px 7px 0;
+}
+.shoppingcart .icon3 {
+    float: right;
+    margin-right: 11px;
+    font: 100 14px/36px "microsoft yahei";
+}
+.reci {
+    /*width: 500px;*/
+    height: 36px;
+    /*margin-top: 9px;*/
+    line-height: 36px;
+    /*background: #551A8B;*/
+}
+.reci a {
+    float: left;
+    margin-right: 11px;
+}
+/*logo end*/
+
+.nav {
+    height: 44px;
+    border-bottom: 2px solid #B1191A;
+}
+.nav_dropdown {
+    height: 44px;
+    width: 210px;
+    background-color: #B1191A;
+    position: relative;
+    /*position: absolute;*/
+    z-index: 1;
+}
+.nav_dropdown_all a {
+    font: 400 16px/44px "microsoft yahei";
+    color: #fff;
+    margin-left: 10px;
+}
+.nav_dropdown_detail {
+    height: 466px;
+    background-color :#C81623;
+    border-top: 2px solid #B1191A;
+    border-left: 1px solid #B1191A;
+    /*position: absolute;*/
+}
+.ndd_items  {
+    height: 31px;
+    /*line-height: 32px;*/
+    font: 400 16px/31px "microsoft yahei";
+    color: #fff;
+    padding: 0 10px;
+}
+.ndd_items a {
+    /*display: inline-block;*/
+    /*height: 32px;*/
+    line-height: 31px;
+    color: #fff;
+    float: left;
+}
+.ndd_items span {
+    /*height: 32px;*/
+    /*display: inline-block;*/
+    float: right;
+}
+/*.nav_items {*/
+    /*display: inline-block;*/
+/*}*/
+.nav_items a {
+    display: inline-block;
+    font: 400 16px/44px "microsoft yahei";
+    padding: 0 20px;
+    height: 44px;
+}
+/*.nav_dropdown_detail {*/
+    /*display: none;*/
+/*}*/
+/*.nav_dropdown_all:hover .nav_dropdown_detail {*/
+    /*display: block;*/
+/*}*/
+.ndd_items:hover a {
+    background-color: #fff;
+    color: #C81623;
+}
+.ndd_items:hover {
+    background-color: #fff;
+}
+/*nav end*/
+/*footer start*/
+
+.footer_top_slogan {
+    height: 54px;
+    padding: 20px 0 16px 0;
+    position: relative;
+    background-color: #F5F5F5;
+}
+.footer_top_slogan span {
+    position: absolute;
+    left: 50%;
+}
+.footer_top_slogan .slogan1 {
+    margin-left: -600px;
+}
+.footer_top_slogan .slogan2 {
+    margin-left: -300px;
+}
+.footer_top_slogan .slogan4 {
+    margin-left: 300px;
+}
+.footer_top_product dl {
+    float: left;
+    width: 199px;
+    margin-top: 8px;
+}
+.footer_top_product dl dd {
+    font: 400 16px "microsoft yahei";
+    height: 30px;
+}
+.footer_top_product dl dt {
+    height: 20px;
+}
+.coverage {
+    float: right;
+    width: 206px;
+    height: 165px;
+    background: url("../images/china.png")no-repeat 0 -130px;
+}
+.coverage h2 {
+    margin-top: 8px;
+    font: 400 16px "microsoft yahei";
+    height: 38px;
+}
+.coverage p {
+    line-height: 18px;
+}
+.footer_bottom {
+    /*height: 200px;*/
+    text-align: center;
+    border-top: 1px solid #ccc;
+    padding-top: 23px;
+    margin-top: 21px;
+}
+.footer_bottom_links {
+    height: 28px;
+}
+.footer_bottom_links a{
+    margin: 0 11px;
+}
+.footer_bottom_copyright p {
+    line-height: 21px;
+}
+.footer_bottom_measage {
+    margin-top: 24px;
+}
+.footer_bottom_measage a {
+    /*margin-right: 13px;*/
+    margin: 0 6.5px;
+}
+/*footer end*/
