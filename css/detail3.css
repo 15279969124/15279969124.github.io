@@ -1,0 +1,6 @@
+.nav_dropdown_detail {
+    display: none;
+}
+.nav_dropdown:hover .nav_dropdown_detail {
+    display: block;
+}
