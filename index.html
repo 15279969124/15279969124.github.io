@@ -1,360 +1,254 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>jd3</title>
-    <link rel="stylesheet" href="css/base3.css"/>
-    <!--<link rel="stylesheet" href="css/detail3.css"/>-->
-    <link rel="stylesheet" href="css/index3.css"/>
-    <link rel="shortcut icon" href="favicon.ico"/>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+    }
+    
+    .clearfix::before,
+    .clearfix::after {
+      content: '';
+      visibility: hidden;
+      clear: both;
+      line-height: 0;
+      height: 0;
+      display: block;
+    }
+    
+    .clearfix {
+      zoom: 1;
+    }
+    
+    .f_l {
+      float: left;
+    }
+    
+    .f_r {
+      float: right;
+    }
+    
+    .container {
+      margin: 50px auto 0;
+      width: 800px;
+      height: 500px;
+      border: 1px solid skyblue;
+      border-radius: 10px;
+    }
+    
+    .message {
+      border-bottom: 1px solid skyblue;
+      height: 400px;
+      overflow-y: scroll;
+      padding: 20px;
+      box-sizing: border-box;
+      transition: all 2s;
+    }
+    
+    .control {
+      height: 100px;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    
+    .inputBox {
+      height: 60px;
+      margin-top: 20px;
+      border-radius: 6px;
+      outline: none;
+      padding: 0;
+      box-sizing: border-box;
+      width: 500px;
+      font-size: 30px;
+      box-shadow: 0 0 3px gray;
+      border: 1px solid #ccc;
+      transition: all .2s;
+      padding-left: 10px;
+    }
+    
+    .inputBox:focus {
+      border-color: skyblue;
+      box-shadow: 0 0 3px skyblue;
+    }
+    
+    .sendButton {
+      height: 40px;
+      margin-top: 19px;
+      background-color: yellowgreen;
+      width: 170px;
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 20px;
+      font-family: '微软雅黑';
+      cursor: pointer;
+    }
+    
+    .message>div>a {
+      text-decoration: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: skyblue;
+      text-align: center;
+      line-height: 50px;
+      color: white;
+      font-size: 25px;
+      font-weight: 700;
+      font-family: '微软雅黑';
+    }
+    
+    .message>.robot>a {
+      background-color: #469767;
+    }
+    
+    .message>.self>a {
+      background-color: yellowgreen;
+    }
+    
+    .message>div {
+      padding: 10px 0;
+    }
+    
+    .message>div>p {
+      max-width: 300px;
+      margin: 0 10px;
+      padding: 10px 10px;
+      background-color: #ccc;
+      border-radius: 10px;
+      word-break: break-all;
+      position: relative;
+      line-height: 28px;
+      font-weight: 400;
+      font-family: '微软雅黑';
+      color: white;
+      font-size: 20px;
+    }
+    
+    .message>.robot>p {
+      background-color: skyblue;
+    }
+    
+    .message>.robot>p::before {
+      content: '';
+      position: absolute;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-right: 6px solid skyblue;
+      left: -5px;
+      top: 15px;
+    }
+    
+    .message>.self>p {
+      color: black;
+    }
+    
+    .message>.self>p::before {
+      content: '';
+      position: absolute;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 6px solid #ccc;
+      right: -6px;
+      top: 15px;
+    }
+  </style>
 </head>
+
 <body>
-<!--shortcut start-->
-<div class="shortcut">
-    <div class="w shortcut_center">
-        <div class="shortcut_c_l fl">
-            送至：合肥
-            <i><s>◇</s></i>
-        </div>
-        <div class="shortcut_c_r fr">
-            <ul>
-                <li><a href="#">你好，请登录 免费注册</a></li>
-                <li class="line"></li>
-                <li><a href="#">我的订单</a></li>
-                <li class="line"></li>
-                <li class="fore">
-                    <a href="#">我的京东</a>
-                    <i><s>◇</s></i>
-                </li>
-                <li class="line"></li>
-                <li><a href="#">京东会员</a></li>
-                <li class="line"></li>
-                <li><a href="#">企业采购</a></li>
-                <li class="line"></li>
-                <li class="fore jd_tel">
-                    <span class="tel"></span>
-                    <a href="#">手机京东</a><i><s>◇</s></i></li>
-                <li class="line"></li>
-                <li class="fore"><a href="#">关注京东</a><i><s>◇</s></i></li>
-                <li class="line"></li>
-                <li class="fore"><a href="#">客户服务</a><i><s>◇</s></i></li>
-                <li class="line"></li>
-                <li class="fore"><a href="#">网站导航</a><i><s>◇</s></i></li>
-            </ul>
-        </div>
+<h1>说点啥吧</h1>
+  <div class="container">
+    <div class="message">
+      <div class="robot clearfix">
+        <a href="#" class='f_l'>机</a>
+        <p class='f_l'>开始吧，嘻嘻</p>
+      </div>
     </div>
-</div>
-<!--shortcut end-->
-
-<!--topBanner start-->
-<div class="topBanner">
-    <div class="w ">
-        <a href="#"><img src="images/banner.jpg" alt=""/></a>
-        <span class="topBanner_close fr"></span>
+    <div class="control">
+      <input type="text" class='inputBox f_l'>
+      <input type="button" class='sendButton f_r' value='发 送'>
     </div>
-</div>
-<!--topBanner end-->
-
-<!--logo start-->
-<div class="w clearfix">
-    <div class="logo">
-        <a href="http://www.jd.com"><img src="images/logo.png" alt=""/></a>
-    </div>
-    <div class="search">
-        <input type="text" value="金融"/>
-        <button>搜索</button>
-    </div>
-    <div class="shoppingcart fr">
-        <span class="icon1"></span>
-        我的购物车
-        <span class="icon2">11</span>
-        <span class="icon3">></span>
-    </div>
-    <div class="reci fl">
-        <a href="#"></a>
-        <a href="#">一元狂享</a>
-        <a href="#">手机专场</a>
-        <a href="#">抢猪饲料</a>
-        <a href="#">鲜花99元</a>
-        <a href="#">买一送一</a>
-        <a href="#">小米note</a>
-        <a href="#">踝靴</a>
-        <a href="#">199减100</a>
-    </div>
-</div>
-<!--logo end-->
-
-<!--nav start-->
-<div class="nav">
-    <div class="w">
-        <div class="nav_dropdown fl">
-            <div class="nav_dropdown_all">
-                <a href="#">全部商品分类</a>
-            </div>
-            <div class="nav_dropdown_detail">
-                <div class="ndd_items">
-                    <h2><a href="#">家用电器</a></h2>
-                    <span>></span>
-                </div>
-                <div class="ndd_items">
-                    <h2><a href="#">手机、数码、京东通信</a></h2>
-                    <span>></span>
-                </div>
-                <div class="ndd_items">
-                    <h2><a href="#">家用电器</a></h2>
-                    <span>></span>
-                </div>
-                <div class="ndd_items">
-                    <h2><a href="#">手机、数码、京东通信</a></h2>
-                    <span>></span>
-                </div>
-                <div class="ndd_items">
-                    <h2><a href="#">家用电器</a></h2>
-                    <span>></span>
-                </div>
-                <div class="ndd_items">
-                    <h2><a href="#">手机、数码、京东通信</a></h2>
-                    <span>></span>
-                </div>
-                <div class="ndd_items">
-                    <h2><a href="#">家用电器</a></h2>
-                    <span>></span>
-                </div>
-                <div class="ndd_items">
-                    <h2><a href="#">手机、数码、京东通信</a></h2>
-                    <span>></span>
-                </div>
-                <div class="ndd_items">
-                    <h2><a href="#">家用电器</a></h2>
-                    <span>></span>
-                </div>
-                <div class="ndd_items">
-                    <h2><a href="#">手机、数码、京东通信</a></h2>
-                    <span>></span>
-                </div>
-                <div class="ndd_items">
-                    <h2><a href="#">家用电器</a></h2>
-                    <span>></span>
-                </div>
-                <div class="ndd_items">
-                    <h2><a href="#">手机、数码、京东通信</a></h2>
-                    <span>></span>
-                </div>
-                <div class="ndd_items">
-                    <h2><a href="#">家用电器</a></h2>
-                    <span>></span>
-                </div>
-                <div class="ndd_items">
-                    <h2><a href="#">手机、数码、京东通信</a></h2>
-                    <span>></span>
-                </div>
-                <div class="ndd_items">
-                    <h2><a href="#">家用电器</a></h2>
-                    <span>></span>
-                </div>
-            </div>
-        </div>
-        <div class="nav_items fl">
-            <a href="detail3.html">服装城</a>
-            <a href="detail3.html">美妆馆</a>
-            <a href="detail3.html">超市</a>
-            <a href="detail3.html">全球购</a>
-            <a href="detail3.html">闪购</a>
-            <a href="#">团购</a>
-            <a href="#">拍卖</a>
-            <a href="#">金融</a>
-        </div>
-    </div>
-</div>
-<!--nav end-->
-
-<!--banner470 start-->
-<div class="banner470">
-    <a href="detail3.html"></a>
-</div>
-<!--banner470 end-->
-
-<!--main start-->
-<div class="main w clearfix">
-    <div class="main_left">
-        <a href="#"><img src="images/yuanyuan.jpg" alt=""/></a>
-        <span class="arrow">
-            <span class="arrow_left"><</span>
-            <span class="arrow_right">></span>
-        </span>
-
-        <div class="main_left_circle">
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-            </ul>
-        </div>
-    </div>
-    <div class="main_right">
-        <div class="main_right_top">
-            <div class="mrt_news">
-                <div class="mrtn_top">
-                    <h3>京东快报</h3>
-                    <a href="#">更多 ></a>
-                </div>
-                <div class="mrtn_bottom">
-                    <ul>
-                        <li class="red"><a href="#"><span>[618] </span>618霸气登场 超值好货提前订</a></li>
-                        <li><a href="#"><span>[公告] </span>刘强东商务部口述新书上市</a></li>
-                        <li><a href="#"><span>[特惠] </span>高洁丝邀你看电影！</a></li>
-                        <li><a href="#"><span>[公告] </span>华东浦东大件运营中心正式运营</a></li>
-                        <li><a href="#"><span>[特惠] </span>京东E卡买1元返100</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mrt_live">
-                <ul>
-                    <li><a href="#"><i></i>话费</a></li>
-                    <li><a href="#"><i></i>话费</a></li>
-                    <li><a href="#"><i></i>话费</a></li>
-                    <li><a href="#"><i></i>话费</a></li>
-                    <li><a href="#"><i></i>话费</a></li>
-                    <li><a href="#"><i></i>话费</a></li>
-                    <li><a href="#"><i></i>话费</a></li>
-                    <li><a href="#"><i></i>话费<img src="images/quan.png" alt=""/></a></li>
-                    <li><a href="#"><i></i>话费</a></li>
-                    <li><a href="#"><i></i>话费</a></li>
-                    <li><a href="#"><i></i>话费</a></li>
-                    <li><a href="#"><i></i>话费<img src="images/quan.png" alt=""/></a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="main_right_bottom">
-            <a href="#"><img src="images/fat.jpg" alt=""/></a>
-        </div>
-    </div>
-</div>
-<!--main end-->
-
-
-<!--today start-->
-<div class="today w">
-    <div class="today_left fl">
-        <a href="#"><img src="images/april.jpg" alt=""/></a>
-    </div>
-    <div class="today_right fl">
-        <ul>
-            <li><a href="#"><img src="images/activity1.jpg" alt=""/></a></li>
-            <li><a href="#"><img src="images/activity2.jpg" alt=""/></a></li>
-            <li><a href="#"><img src="images/activity3.jpg" alt=""/></a></li>
-            <li><a href="#"><img src="images/activity4.jpg" alt=""/></a></li>
-        </ul>
-        <div class="arrow">
-            <div class="arrow_left"><</div>
-            <div class="arrow_right">></div>
-        </div>
-    </div>
-</div>
-<!--today end-->
-
-
-<!--footer start-->
-<div class="footer">
-    <div class="footer_top clearfix">
-        <div class="footer_top_slogan">
-            <span class="slogan1"><img src="images/slogen1.png" alt=""/></span>
-            <span class="slogan2"><img src="images/slogen2.png" alt=""/></span>
-            <span class="slogan3"><img src="images/slogen3.png" alt=""/></span>
-            <span class="slogan4"><img src="images/slogen4.png" alt=""/></span>
-        </div>
-        <div class="footer_bottom_product w">
-            <dl>
-                <dd>购物指南</dd>
-                <dt><a href="#">购物流程</a></dt>
-                <dt><a href="#">会员介绍</a></dt>
-                <dt><a href="#">生活旅行/团购</a></dt>
-                <dt><a href="#">常见问题</a></dt>
-                <dt><a href="#">大家电</a></dt>
-                <dt><a href="#">联系客服</a></dt>
-            </dl>
-            <dl>
-                <dd>购物指南</dd>
-                <dt><a href="#">购物流程</a></dt>
-                <dt><a href="#">会员介绍</a></dt>
-                <dt><a href="#">生活旅行/团购</a></dt>
-                <dt><a href="#">常见问题</a></dt>
-                <dt><a href="#">大家电</a></dt>
-                <dt><a href="#">联系客服</a></dt>
-            </dl>
-            <dl>
-                <dd>购物指南</dd>
-                <dt><a href="#">购物流程</a></dt>
-                <dt><a href="#">会员介绍</a></dt>
-                <dt><a href="#">生活旅行/团购</a></dt>
-                <dt><a href="#">常见问题</a></dt>
-                <dt><a href="#">大家电</a></dt>
-                <dt><a href="#">联系客服</a></dt>
-            </dl>
-            <dl>
-                <dd>购物指南</dd>
-                <dt><a href="#">购物流程</a></dt>
-                <dt><a href="#">会员介绍</a></dt>
-                <dt><a href="#">生活旅行/团购</a></dt>
-                <dt><a href="#">常见问题</a></dt>
-                <dt><a href="#">大家电</a></dt>
-                <dt><a href="#">联系客服</a></dt>
-            </dl>
-            <dl>
-                <dd>购物指南</dd>
-                <dt><a href="#">购物流程</a></dt>
-                <dt><a href="#">会员介绍</a></dt>
-                <dt><a href="#">生活旅行/团购</a></dt>
-                <dt><a href="#">常见问题</a></dt>
-                <dt><a href="#">大家电</a></dt>
-                <dt><a href="#">联系客服</a></dt>
-            </dl>
-            <div class="coverage">
-                <h3>京东自营覆盖区县</h3>
-
-                <p>京东已向全国2661个区县提供自营配送服务,支持货到付款、POS机刷卡和售后上门服务。</p>
-
-                <p><a href="#">查看详情 ></a></p>
-            </div>
-        </div>
-    </div>
-    <div class="footer_bottom w">
-        <div class="footer_bottom_links">
-            <a href="#">关于我们</a>
-            <a href="#">联系我们</a>|
-            <a href="#">商家入驻</a>|
-            <a href="#">营销中心</a>|
-            <a href="#">手机京东</a>|
-            <a href="#">友情链接</a>|
-            <a href="#">销售联盟</a>|
-            <a href="#">京东社区</a>|
-            <a href="#">京东公益</a>|
-            <a href="#">English Site</a>|
-            <a href="#">Contact Us</a>
-        </div>
-        <div class="footer_bottom_copyright">
-            <p>
-                <img src="images/guohui.png" alt=""/>北京市公安局朝阳分局备案编号110105014669 &nbsp;|&nbsp; 京ICP证070359号 &nbsp;|&nbsp;
-                <a href="#">互联网药品信息服务资格证编号(京)-经营性-2014-0008</a> &nbsp;|&nbsp; 新出发京零 字第大120007号<br/>
-                <a href="#">音像制品经营许可证苏宿批005号</a> &nbsp;|&nbsp; 出版物经营许可证编号新出发(苏)批字第N-012号 &nbsp;|&nbsp;
-                互联网出版许可证编号新出网证(京)字150号<br/>
-                <a href="#">网络文化经营许可证京网文[2014]2148-348号</a> &nbsp; 违法和不良信息举报电话：4006561155 Copyright &nbsp; © 2004-2015
-                京东JD.com 版权所有<br/>
-                京东旗下网站：<a href="#">360TOP</a>&nbsp; <a href="#">拍拍网</a>&nbsp; <a href="#">网银在线</a>
-            </p>
-        </div>
-        <div class="footer_bottom_measage">
-            <a href="#"><img src="images/copyright.png" alt=""/></a>
-            <a href="#"><img src="images/copyright.png" alt=""/></a>
-            <a href="#"><img src="images/copyright.png" alt=""/></a>
-            <a href="#"><img src="images/copyright.png" alt=""/></a>
-            <a href="#"><img src="images/copyright.png" alt=""/></a>
-        </div>
-    </div>
-</div>
-<!--footer end-->
+  </div>
 </body>
+
 </html>
+
+<!--  导入模板引擎  模板引擎 不依赖于 jq -->
+<script type="text/javascript" src='js/template.js'></script>
+<!--  导入 jq  -->
+<script type="text/javascript" src='js/jquery.min-1.72.js'></script>
+
+<!--  定义自己的 模板  -->
+<script type="text/html" id='self'>
+ <div class="self clearfix">
+  <a href="#" class='f_r'>人</a>
+  <p class='f_r'>{{info}}</p>
+</div>
+</script>
+
+<!--  定义机器人的模板   -->
+<script type="text/html" id='robot'>
+    <div class="robot clearfix">
+      <a href="#" class='f_l'>机</a>
+      <p class='f_l'>{{text}}</p>
+    </div>
+</script>
+
+
+<!--
+  type:'post',
+        url:'http://www.tuling123.com/openapi/api',
+        //  获取数据 并发送 
+        data:{
+          key:'e39a340d87da47829c3bee5c4df64203',
+          info:$(".inputBox").val()
+        },
+
+-->
+<!-- 自己的js代码 -->
+<script type="text/javascript">
+  /**
+   * 需求1
+      * 点击发送按钮 
+      * 创建 自己的聊天框
+      * 设置聊天框的内容  
+      * 添加到页面上
+      需求2
+        ajax 调用网络接口
+          发送输入的信息
+        在数据返回之后
+          * 创建 机器人的聊天框
+          * 设置聊天框的内容  
+          * 添加到页面上
+   */
+  $('.sendButton').click(function(){
+    var inputValue = $('.inputBox').val();
+    
+    // 创建自己的聊天框
+    var result = template('self',{info:inputValue});
+
+    // 添加到 容器中即可
+    $('.message').append(result);
+
+    // 通过ajax 发送数据
+    $.ajax({
+      url:'http://www.tuling123.com/openapi/api',
+      type:'post',
+      data:{
+         key:'e39a340d87da47829c3bee5c4df64203',
+         info:$('.inputBox').val()
+      },success:function(data){
+        console.log(data);
+        // 数据格式 {"code":100000,"text":"我不会说英语的啦，你还是说中文吧。"}
+        // 模板引擎 渲染页面
+        $('.message').append(template('robot',data));
+      }
+    })
+  })
+</script>
+
